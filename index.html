@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image</title>
+    <style>
+        /* Basic styles for image */
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        img {
+            width: 100%; /* Adjust the width of the image */
+            height: auto;
+        }
+
+        /* Style for the clickable dot */
+        .dot {
+            position: absolute;
+            top: 40%; /* Adjust these values to position the dot */
+            left: 50%; /* Adjust these values to position the dot */
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* Style for the popup text box */
+        .popup {
+            display: none;
+            position: absolute;
+            top: 45%; /* Adjust position relative to the image */
+            left: 55%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 8px;
+            width: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .popup.active {
+            display: block;
+        }
+
+        /* Title and text styles */
+        .popup-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .popup-text {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image-container">
+        <img src="your-image-url-here" alt="Interactive Image">
+        <div class="dot" onclick="togglePopup()"></div>
+        <div class="popup" id="popup">
+            <div class="popup-title">Your Title Here</div>
+            <div class="popup-text">
+                Your descriptive text goes here. You can add as much text as you need to describe the content of the image or provide additional details.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to toggle the popup
+        function togglePopup() {
+            var popup = document.getElementById("popup");
+            popup.classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>
