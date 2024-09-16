@@ -10,24 +10,21 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden; /* Hide scrollbars on the body */
+            overflow: hidden; /* Hide global scrollbars */
         }
 
-        /* Image container with overflow and scroll bars */
+        /* Image container with vertical scroll */
         .image-container {
             position: relative;
             width: 100vw; /* 100% of the viewport width */
             height: 100vh; /* 100% of the viewport height */
-            overflow: auto; /* Enable scrolling if needed */
+            overflow-y: auto; /* Vertical scrolling enabled */
+            overflow-x: hidden; /* Disable horizontal scrolling */
         }
 
         img {
-            width: auto; /* Maintain the aspect ratio */
-            height: auto; /* Ensure the image height is also flexible */
-            max-width: none; /* Remove the max-width constraint */
-            max-height: none; /* Remove the max-height constraint */
-            min-width: 1000px; /* Set a minimum width for the image */
-            min-height: 800px; /* Set a minimum height for the image */
+            width: 100%; /* Ensure the image fits the full width */
+            height: auto; /* Maintain aspect ratio and allow height to grow */
         }
 
         /* Style for the clickable dot */
@@ -84,21 +81,21 @@
 </head>
 <body>
 
-   <div class="image-container">
-        <img src="https://raw.githubusercontent.com/blanca-pavon/iframe-five/main/mass%20flow%20fms%20tests%202.png" alt="Interactive Image">
-        <div class="dot" onclick="togglePopup()"></div>
-        <div class="popup" id="popup">
-            <div class="popup-title">ANALYSIS OF RESULTS</div>
-            <div class="popup-text">
-                As it can be seen, the tests performed did not reach the desired mass flow. The main reason for failure, common in all the tests, was faulty sealing.<br />
-                <br />
-                This can be appreciated in the figure, as it is shown how the mass flow at the beginning is much higher for some of the tests, and then it drastically drops due to water losses through the sealing. <br />
-                <br />
-                On the other hand, other prototypes were losing water before the start of the test itself, and the very own moving wall of the prototype prevented the water from flowing properly, that is why a very low mass flow is measured. <br />
-                Even though different types of sealing were tested, it was found that the imperfections in the walls of the tank due to the usage of additive manufacturing prevented the seal from closing completely and therefore resulted in water leakings, which significantly reduced the mass flow. 
+    <div class="image-container">
+            <img src="https://raw.githubusercontent.com/blanca-pavon/iframe-five/main/mass%20flow%20fms%20tests%202.png" alt="Interactive Image">
+            <div class="dot" onclick="togglePopup()"></div>
+            <div class="popup" id="popup">
+                <div class="popup-title">ANALYSIS OF RESULTS</div>
+                <div class="popup-text">
+                    As it can be seen, the tests performed did not reach the desired mass flow. The main reason for failure, common in all the tests, was faulty sealing.<br />
+                    <br />
+                    This can be appreciated in the figure, as it is shown how the mass flow at the beginning is much higher for some of the tests, and then it drastically drops due to water losses through the sealing. <br />
+                    <br />
+                    On the other hand, other prototypes were losing water before the start of the test itself, and the very own moving wall of the prototype prevented the water from flowing properly, that is why a very low mass flow is measured. <br />
+                    Even though different types of sealing were tested, it was found that the imperfections in the walls of the tank due to the usage of additive manufacturing prevented the seal from closing completely and therefore resulted in water leakings, which significantly reduced the mass flow. 
+                </div>
             </div>
         </div>
-    </div>
 
     <script>
         // JavaScript to toggle the popup
