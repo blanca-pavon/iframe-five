@@ -5,27 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Image</title>
     <style>
-        /* Enlarge the image to full screen, ensuring it is fully visible */
+        /* Full screen setup */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            overflow: hidden; /* Hide scrollbars on the body */
         }
 
+        /* Image container with overflow and scroll bars */
         .image-container {
             position: relative;
             width: 100vw; /* 100% of the viewport width */
             height: 100vh; /* 100% of the viewport height */
-            display: flex;
-            justify-content: center; /* Center the image horizontally */
-            align-items: center; /* Center the image vertically */
+            overflow: auto; /* Enable scrolling if needed */
         }
 
         img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain; /* Ensures the full image is visible without being cropped */
+            width: auto; /* Maintain the aspect ratio */
+            height: auto; /* Ensure the image height is also flexible */
+            max-width: none; /* Remove the max-width constraint */
+            max-height: none; /* Remove the max-height constraint */
+            min-width: 1000px; /* Set a minimum width for the image */
+            min-height: 800px; /* Set a minimum height for the image */
         }
 
         /* Style for the clickable dot */
@@ -76,13 +78,13 @@
         }
 
         .popup-text {
-            font-size: 16px; /* Updated font size to 16 points */
+            font-size: 16px; /* Larger font size for better readability */
         }
     </style>
 </head>
 <body>
 
-    <div class="image-container">
+   <div class="image-container">
         <img src="https://raw.githubusercontent.com/blanca-pavon/iframe-five/main/mass%20flow%20fms%20tests%202.png" alt="Interactive Image">
         <div class="dot" onclick="togglePopup()"></div>
         <div class="popup" id="popup">
